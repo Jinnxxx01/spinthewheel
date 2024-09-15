@@ -103,12 +103,17 @@ function spinWheel() {
       const displayName = names[selectedIndex].replace(',', '');
       resultText.textContent = `Result: ${displayName}`;
       isSpinning = false;
-      // Trigger confetti effect
+      // Clear the wheel and show confetti
+      clearWheel();
       triggerConfetti();
     }
   };
 
   spin();
+}
+
+function clearWheel() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 
 function triggerConfetti() {
